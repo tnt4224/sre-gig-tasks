@@ -14,6 +14,8 @@ func main() {
 	//   i. If the number is higher than 50 print "It's closer to 100"
         //  ii. If the number is lower than 50 print "It's closer to 0"
         // iii. Print the generated random number
+	//
+	// 2. Modify the previous code to print "It's 50!" if the random number is 50
 
 	// NOTE: 
 	// rand.Seed has been deprecated since v 1.20 
@@ -24,12 +26,14 @@ func main() {
 
 	if number > 50 {
 		fmt.Println("It's closer to 100")
-	} else {
+	} else if number < 50 {
 		fmt.Println("It's closer to 0")
+	} else {
+		fmt.Println("It's 50!")
 	}
 
 }
 
 func genRandomInt(min int, max int) int {
-	return rand.Intn(max - min)
+	return min + rand.Intn(max - min)
 }
