@@ -85,17 +85,6 @@ func aiNews ( w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Send data to stdout ( Debugging ) 
-	/*
-        fmt.Println(string(body))
-	var iter = 0
-	for _ , item := range data.Value{
-		fmt.Println("Title: " + item.Title)
-		fmt.Printf("URL: %v\n\n", item.WebURL)
-		iter++
-	}
-	*/
-
 	err = t.Execute(w, data.Value)
 
 }
