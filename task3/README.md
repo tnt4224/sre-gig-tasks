@@ -7,3 +7,4 @@ The webserver retrieves the latest AI News links and displays this info to the u
 An exceprt from the news article, source and timestamp are provided for each article.
 
 
+![AI News screenshot](ai_news_screenshot.png)
