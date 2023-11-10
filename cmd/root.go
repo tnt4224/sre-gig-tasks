@@ -44,23 +44,27 @@ func cloneRepo(url ,dir string) {
 var rootCmd = &cobra.Command{
 	Use:   "gitHub",
 	Version: version,
-	Short: "gitHub analyzes GitHub repositories for code quality and security.",
-	Long:  `A Fast and Flexible Static Analysis CLI built with love by Gophers for GitHub repositories.`,
+	Short: "Clone a github repo",
+	Long:  `This tool allows the user to clone a github repo to a local directory`,
 }
 
 // Command to analyze code quality
 var cloneCmd = &cobra.Command{
-	Use:   "clone",
+	Use:   "clone <github repo> [directory]",
 	Short: "Clone a github repo",
 	Aliases: []string{"c"},
 	Args: cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-	   gitRepo := args[0]
-	   repoDirectory := ""
-	   if len(args) > 1 {
-	      repoDirectory = args[1]
-	   }
-	   cloneRepo(gitRepo, repoDirectory)
+	   if len(args) > 2 {
+	      fmt.Println("Too many arguments.")
+	   }  else {
+	      gitRepo := args[0]
+	      repoDirectory := ""
+	      if len(args) > 1 {
+	         repoDirectory = args[1]
+	      }
+	      cloneRepo(gitRepo, repoDirectory)
+   	   }
 	},
 }
 
