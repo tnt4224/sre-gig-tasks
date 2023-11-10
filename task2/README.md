@@ -1,5 +1,5 @@
 
-## Task1 (Async Review)
+## Task2 (Async Review)
 
 1. Generate a random number between 1 and 100
     1. If the number is higher than 50 print "It's closer to 100"
